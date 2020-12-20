@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "290140044854",
+    "project_id": "sena-3aafd",
+    "storage_bucket": "sena-3aafd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290140044854:android:f6e22828baa40bdb5fa297",
+        "android_client_info": {
+          "package_name": "com.example.sena_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290140044854-b0kr15l0rs0facm8s7uah6lc2tqgk7ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChr3qQaSlVKXVjRfopVEKwWcsVF_5qoYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290140044854-b0kr15l0rs0facm8s7uah6lc2tqgk7ml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
