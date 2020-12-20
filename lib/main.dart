@@ -1,21 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import 'core/theme_sena.dart';
+
+// materialpalette.com
+// https://www.youtube.com/watch?v=BEVOiv_j35w&t=9s
+
 void main() {
   runApp(MyApp());
-  Firestore.instance.collection('teste_ios').add({'teste': 'teste'});
-  print('Done teste ios');
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Sena',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeSena.theme(),
       home: MyHomePage(title: 'Sena Home Page'),
     );
   }
