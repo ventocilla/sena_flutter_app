@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
-  Firestore.instance.collection('teste').add({'teste': 'teste'});
-  print('Done');
+  Firestore.instance.collection('teste_ios').add({'teste': 'teste'});
+  print('Done teste ios');
 }
 
 class MyApp extends StatelessWidget {
