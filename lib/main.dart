@@ -1,40 +1,34 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-import 'core/theme_sena.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:sena_flutter_app/models/user_manager.dart';
+import 'package:sena_flutter_app/pages/base_page.dart';
 
 // materialpalette.com
-// https://www.youtube.com/watch?v=BEVOiv_j35w&t=9s
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Sena',
-      theme: ThemeSena.theme(),
-      home: DashPage(),
-    );
-  }
-}
-
-class DashPage extends StatefulWidget {
-  @override
-  _DashPageState createState() => _DashPageState();
-}
-
-class _DashPageState extends State<DashPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Dash'),
+    return ChangeNotifierProvider<UserManager>(
+      create: (_) => UserManager(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Sena',
+        theme: ThemeData(
+          //primaryColor: const Color.fromARGB(255, 4, 125, 141),
+          //scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
+          primaryColor: const Color(0xFF007292),
+          scaffoldBackgroundColor: const Color(0xFF007292),
+          appBarTheme: const AppBarTheme(elevation: 0),
+        ),
+        home: BasePage(),
       ),
-      body: Container(),
     );
   }
 }
