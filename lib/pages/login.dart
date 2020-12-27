@@ -21,8 +21,10 @@ class LoginPage extends StatelessWidget {
         centerTitle: true,
         actions: [
           FlatButton(
-            onPressed: () {},
-            child: Text('CRIAR CONTA', style: TextStyle(color: Colors.white)),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/signup');
+            },
+            child: Text('CRIAR CONTA', style: TextStyle(color: Colors.white, fontSize: 14)),
           ),
         ],
       ),
@@ -83,7 +85,8 @@ class LoginPage extends StatelessWidget {
                                 if (formKey.currentState.validate()) {
                                   final user = User(
                                       email: emailController.text,
-                                      password: passwordController.text);
+                                      password: passwordController.text,
+                                  );
                                   userManager.signIn(
                                       user: user,
                                       onFail: (e) {
@@ -96,7 +99,7 @@ class LoginPage extends StatelessWidget {
                                         );
                                       },
                                       onSucess: () {
-                                        // TODO: FECHAR TELA DE LOGIN
+                                        Navigator.of(context).pop();
                                       });
                                 }
                               },
